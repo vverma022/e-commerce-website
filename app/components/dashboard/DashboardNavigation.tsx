@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 const links = [
     {name: "Dashboard" , href: "/dashboard" },
     {name: "Orders" , href: "/dashboard/orders" },
@@ -8,15 +9,14 @@ const links = [
 
 ]
 
-
-export function DashboardNavigation(){
+export default function DashboardNavigation(){
     return(
         <>
-        {links.map((link) => {
-         <Link key={link.href}  href={link.href}>
-            {link.name}
+        {links.map((links) => (
+         <Link key={links.href}  href={links.href}>
+            {links.name}
          </Link>
-        })}
+        ))}
         </>
     )
 }
